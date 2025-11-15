@@ -1,65 +1,98 @@
+import Link from "next/link";
 import Image from "next/image";
+import { Github, Linkedin, Mail } from "lucide-react";
+import FeaturedProjects from "@/components/featured-projects";
+import ServicesSection from "@/components/services";
+import CtaSection from "@/components/cta";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(0,0,0,0.06),transparent_60%)] dark:bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.06),transparent_60%)]" />
+        <div className="grid w-full grid-cols-1 items-center gap-10 px-4 py-10 md:grid-cols-2 md:px-8 md:py-16">
+          <div className="order-2 md:order-1">
+            <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/5 px-3 py-1 text-xs font-medium text-black/80 dark:border-white/20 dark:bg-white/10 dark:text-white/80">
+              Fullstack Developer
+            </span>
+            <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
+              Hi, I’m <span className="bg-gradient-to-r from-black to-black/60 bg-clip-text text-transparent dark:from-white dark:to-white/60">nesrine aouinti</span>
+            </h1>
+            <p className="mb-6 text-lg text-black/70 dark:text-white/70">
+              Hello there! I’m Nesrine, a full-stack developer specializing in building
+              scalable, high-performance web applications. I focus on creating robust
+              front-end interfaces with clean architecture, reusable components, and a strong
+              emphasis on performance, accessibility, and modern UI patterns.
+            </p>
+
+            <p className="mb-6 text-lg text-black/70 dark:text-white/70">
+              Over the past four years, I’ve worked extensively across the web development
+              stack—designing responsive UIs, implementing optimized server-rendered pages,
+              integrating RESTful APIs, and improving application reliability and
+              maintainability. My experience spans component-driven development with
+              React/Next.js, state management, API orchestration, and performance tuning to
+              deliver seamless, production-ready user experiences.
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/projects"
+                className="inline-flex h-11 items-center justify-center rounded-md bg-foreground px-5 text-sm font-medium text-background transition-colors hover:bg-foreground/90 dark:bg-white dark:text-black dark:hover:bg-white/90"
+              >
+                View Projects
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex h-11 items-center justify-center rounded-md border border-black/10 bg-black/5 px-5 text-sm font-medium text-foreground transition-colors hover:bg-black/10 dark:border-white/20 dark:bg-white/10 dark:hover:bg-white/20"
+              >
+                Contact Me
+              </Link>
+            </div>
+            <div className="mt-4 flex items-center gap-2">
+              <Link
+                href="https://github.com/nesrineaouinti"
+                aria-label="GitHub"
+                target="_blank"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 bg-black/5 text-black/70 transition-colors hover:bg-black/10 dark:border-white/15 dark:bg-white/10 dark:text-white/80 dark:hover:bg-white/20"
+              >
+                <Github className="h-4 w-4" />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/aouintinesrine/"
+                aria-label="LinkedIn"
+                target="_blank"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 bg-black/5 text-black/70 transition-colors hover:bg-black/10 dark:border-white/15 dark:bg-white/10 dark:text-white/80 dark:hover:bg-white/20"
+              >
+                <Linkedin className="h-4 w-4" />
+              </Link>
+              <Link
+                href="mailto:nesrineaouinti.dev@gmail.com"
+                aria-label="Email"
+                target="_blank"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-black/10 bg-black/5 text-black/70 transition-colors hover:bg-black/10 dark:border-white/15 dark:bg-white/10 dark:text-white/80 dark:hover:bg-white/20"
+              >
+                <Mail className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+          <div className="order-1 md:order-2">
+            <div className="relative mx-auto aspect-square w-56 overflow-hidden rounded-2xl ring-1 ring-black/10 dark:ring-white/10 md:w-72">
+              <Image
+                src="/images/WhatsApp%20Image%202025-02-17%20at%2017.12.50.jpeg"
+                alt="Portrait of nesrine aouinti"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 224px, 288px"
+                priority
+              />
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Landing sections */}
+      <FeaturedProjects />
+      <ServicesSection />
+      <CtaSection />
+    </>
   );
 }
