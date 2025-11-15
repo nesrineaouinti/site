@@ -1,19 +1,10 @@
 import Link from "next/link";
 import { ProjectCard, type Project } from "@/components/project-card";
+import projectsData from "../../public/projects.json";
 
-async function getProjects(): Promise<Project[]> {
-  try {
-    const res = await fetch("http://localhost:4000/projects", { cache: "no-store" });
-    if (!res.ok) throw new Error("Failed to fetch");
-    const data = await res.json();
-    return Array.isArray(data) ? data : data.projects ?? [];
-  } catch {
-    return [];
-  }
-}
-
-export default async function FeaturedProjects() {
-  const projects = (await getProjects()).slice(0, 3);
+export default function FeaturedProjects() {
+  const all = (projectsData as { projects?: Project[] }).projects ?? [];
+  const projects = all.slice(0, 3);
 
   return (
     <section className="py-12 md:py-16">
@@ -32,7 +23,7 @@ export default async function FeaturedProjects() {
 
       {projects.length === 0 ? (
         <div className="rounded-lg border border-dashed border-black/10 p-6 text-sm text-black/70 dark:border-white/15 dark:text-white/70">
-          No projects to show yet. Start the API with <code>npm run json:server</code>.
+          No projects to show yet. Edit <code>/public/projects.json</code> to add items.
         </div>
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3">

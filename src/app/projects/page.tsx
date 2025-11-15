@@ -1,19 +1,8 @@
 import { ProjectCard, type Project } from "@/components/project-card";
+import projectsData from "../../../public/projects.json";
 
-async function getProjects(): Promise<Project[]> {
-  try {
-    const res = await fetch("http://localhost:4000/projects", { cache: "no-store" });
-    if (!res.ok) throw new Error("Failed to fetch");
-    const data = await res.json();
-    // If json-server is watching an object { projects: [...] }, adapt; otherwise assume array
-    return Array.isArray(data) ? data : data.projects ?? [];
-  } catch {
-    return [];
-  }
-}
-
-export default async function ProjectsPage() {
-  const projects = await getProjects();
+export default function ProjectsPage() {
+  const projects = (projectsData as { projects?: Project[] }).projects ?? [];
 
   return (
     <section>
@@ -26,8 +15,7 @@ export default async function ProjectsPage() {
 
       {projects.length === 0 ? (
         <div className="rounded-lg border border-dashed border-black/10 p-6 text-sm text-black/70 dark:border-white/15 dark:text-white/70">
-          No projects found. Make sure the JSON Server is running:
-          <pre className="mt-3 rounded-md bg-black/5 p-3 dark:bg-white/10">npm run json:server</pre>
+          No projects found. Edit <code>/public/projects.json</code> to add items.
         </div>
       ) : (
         <div className="grid gap-6 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">

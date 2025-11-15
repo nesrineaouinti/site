@@ -1,0 +1,31 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "AI-Powered Chatbot Assistant",
+      "description": "an AI-Powered Chatbot Interface that blends deep contextual understanding, RAG (Retrieval-Augmented Generation), and multilingual (i18n) support into a single, modern full-stack application.",
+      "tech": ["React","Vite", "TypeScript", " Django REST","JWT Authentication","LangChain"],
+      "image": "/images/chatbot.jpeg",
+      "url": "#",
+      "source": "https://github.com/nesrineaouinti/AI-Powered-Chatbot-Interface"
+    },
+    {
+      "id": 2,
+      "title": "PostIt: AI-Based Media Post Generator",
+      "description": "PostIt is a full-stack AI-powered application that automates social media content generation using React for the frontend and Django REST Framework for the backend.",
+      "tech": ["React", "Django", "SQLite"],
+      "image": "/images/project-postit.png",
+      "url": "https://example.com/shoply",
+      "source": "https://github.com/nesrine/shoply"
+    },
+    {
+      "id": 3,
+      "title": "Project Management Tool (Web App)",
+      "description": "A full-featured project management platform with role-based access (Admin, Project Manager, Member). Users can manage projects, assign tasks, create issues and epics, comment, filter, and track progress with a user-friendly UI. Includes dashboards, notifications, and real-time updates..",
+      "tech": ["Next.js", "ExpressJs", "Tailwind", "MangoDB"],
+      "image": "/images/project-manager.PNG",
+      "url": "https://example.com/taskflow",
+      "source": "https://github.com/nesrine/taskflow"
+    }
+  ]
+}
