@@ -6,7 +6,7 @@
       "description": "an AI-Powered Chatbot Interface that blends deep contextual understanding, RAG (Retrieval-Augmented Generation), and multilingual (i18n) support into a single, modern full-stack application.",
       "tech": ["React","Vite", "TypeScript", " Django REST","JWT Authentication","LangChain"],
       "image": "/images/chatbot.jpeg",
-      "url": "youtube.com/watch?feature=shared&v=Q8OpW_oirGQ",
+      "url": "https://www.youtube.com/watch?v=Q8OpW_oirGQ",
       "source": "https://github.com/nesrineaouinti/AI-Powered-Chatbot-Interface"
     },
     {
